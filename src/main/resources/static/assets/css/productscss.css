@@ -1,0 +1,29 @@
+.productImg{
+    width: 300px;
+    height: 250px;
+    display: inline-block;
+
+}
+.myList:hover{
+    background: lightblue;
+}
+
+.myList{
+    display: inline-block;
+    width: 350px;
+    margin: 5px;
+}
+
+#inputForm{
+margin-left: 10px;
+    margin-right: 10px;
+}
+
+#container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height:50%;
+    border: 2px solid black
+}
