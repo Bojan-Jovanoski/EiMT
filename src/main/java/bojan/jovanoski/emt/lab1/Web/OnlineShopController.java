@@ -87,7 +87,7 @@ public class OnlineShopController {
         model.addAttribute("manufacturerList", manufacturerService.getAllManufacturers());
         model.addAttribute("categories", categoryService.getCategories());
         model.addAttribute("product", product);
-        return "productAdd";
+        return "add";
     }
 
     @ExceptionHandler({ManufacturerNotFoundException.class, CategoryNotFoundException.class})
@@ -119,7 +119,7 @@ public class OnlineShopController {
         model.addAttribute("categoryID", categoryID);
         model.addAttribute("product", product);
 
-        return "redirect:/productPage";
+        return "redirect:/products";
     }
 
     private long NextId() {return counter++;}
@@ -130,14 +130,14 @@ public class OnlineShopController {
     public String goToProduct(@PathVariable("product_id") String product_ID, String ID, Model model) throws IOException{
         Long id = Long.parseLong(ID);
         Product product = productService.getById(id);
-        model.addAttribute("product", product);
-        return "product";
+        model.addAttribute("productDetails", product);
+        return "productDetails";
     }
 
     @DeleteMapping("/")
     public String productDelete(HttpServletRequest request) {
         Long productID = Long.parseLong(request.getParameter("productID"));
         productService.deleteProduct(productService.getById(productID));
-        return "redirect:/productPage/";
+        return "redirect:/products/";
     }
 }

@@ -28,6 +28,12 @@
     <div class="container">
         <button onclick="location.href='/products'" class="btn btn-primary myButton">Go back to products</button>
     </div>
+
+    <div class="container">
+        <a th:href="@{/checkout/productID(ID=${productDetails.id})}">
+            <button class="btn btn-primary">Checkout</button>
+        </a>
+    </div>
 </div>
 </body>
 </html>
